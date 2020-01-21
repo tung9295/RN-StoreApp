@@ -1,10 +1,15 @@
 import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
-import CategoryListItem from './components/CategoryListItem';
-import CosmeticImg from './assets/cosmetic.png';
-import SupplementImg from './assets/vitamin.png'; 
-import AccessoriImg from './assets/necklace.png'; 
+import CategoryListItem from '../components/CategoryListItem';
+
+import CosmeticImg from '../assets/cosmetic.png';
+import SupplementImg from '../assets/vitamin.png'; 
+import AccessoriImg from '../assets/necklace.png'; 
+
 export default class Categories extends React.Component {
+  static navigationOptions = {
+    title: 'HOME'
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -18,12 +23,20 @@ export default class Categories extends React.Component {
     }
   }
   render() {
+    const { navigation } = this.props;
     const { categories } = this.state;
     return (
       <FlatList data={categories}
-        renderItem={({ item }) => <CategoryListItem category={item}/>}
+        renderItem={({ item }) =>
+          <CategoryListItem
+            category={item}
+            onPress={() => navigation.navigate('Category', {
+              categoryName: item.name
+            })}
+          />
+        }
         keyExtractor={item => `${item.id}`}
-        contentContainerStyle={{paddingRight: 16, paddingLeft: 16}}
+        contentContainerStyle={styles.container}
       />
     );
   }
@@ -31,11 +44,8 @@ export default class Categories extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-    alignItems: 'stretch',
-    justifyContent: 'center',
     paddingLeft: 16,
-    paddingRight: 16
+    paddingRight: 16,
+    paddingTop: 16
   },
 });

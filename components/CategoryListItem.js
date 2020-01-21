@@ -1,17 +1,18 @@
 import React from 'react'
-import { Image, Text, View, StyleSheet, TouchableOpacity, Alert } from 'react-native'
+import { Image, Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default class CategoryListItem extends React.Component {
   render () {
-    const { category } = this.props
+    const { category, onPress } = this.props
     return (
-      <TouchableOpacity activeOpacity={0.6} onPress={() => {
-        Alert.alert('Clicked')
-      }}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={onPress}
+      >
         <View style={style.container}>
-        <Text style={style.title}>{category.name}</Text>
-        <Image source={category.imgLink} style={style.categoryImages}></Image>
-      </View>
+          <Text style={style.title}>{category.name}</Text>
+          <Image source={category.imgLink} style={style.categoryImages}></Image>
+        </View>
       </TouchableOpacity>
     )
   }

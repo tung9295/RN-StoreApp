@@ -1,11 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
  
 export default class Category extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('categoryName')
+    };
+  };
   render() {
-    const { categories } = this.state;
     return (
-      <View>Category</View>
+      <View>
+        <Text>Category</Text>
+      </View>
+      
     );
   }
 }
