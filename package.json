@@ -20,5 +20,18 @@
     "babel-preset-expo": "~8.0.0",
     "react-devtools": "^3.6.3"
   },
-  "private": true
+  "private": true,
+  "name": "rn-storeapp",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tung9295/RN-StoreApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tung9295/RN-StoreApp/issues"
+  },
+  "homepage": "https://github.com/tung9295/RN-StoreApp#readme",
+  "description": ""
 }

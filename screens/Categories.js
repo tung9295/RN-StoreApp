@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, ScrollView, View, FlatList } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 import CategoryListItem from './components/CategoryListItem';
 import CosmeticImg from './assets/cosmetic.png';
 import SupplementImg from './assets/vitamin.png'; 
 import AccessoriImg from './assets/necklace.png'; 
-export default class App extends React.Component {
+export default class Categories extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
